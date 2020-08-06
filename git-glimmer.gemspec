@@ -2,12 +2,12 @@ $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 require 'git/version'
 
 Gem::Specification.new do |s|
-  s.author = 'Scott Chacon and others'
-  s.email = 'schacon@gmail.com'
-  s.homepage = 'http://github.com/ruby-git/ruby-git'
+  s.author = 'Andy Maleh, Scott Chacon and others'
+  s.email = 'andy.am@gmail.com'
+  s.homepage = 'https://github.com/AndyObtiva/ruby-git'
   s.license = 'MIT'
-  s.name = 'git'
-  s.summary = 'Ruby/Git is a Ruby library that can be used to create, read and manipulate Git repositories by wrapping system calls to the git binary.'
+  s.name = 'git-glimmer'
+  s.summary = 'Ruby/Git with fixes to use in Glimmer (Ruby Desktop Development GUI Library)'
   s.version = Git::VERSION
 
   s.require_paths = ['lib']
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     'LICENSE',
     'README.md',
     'lib/git.rb',
+    'lib/git-glimmer.rb',
     'lib/git/author.rb',
     'lib/git/base.rb',
     'lib/git/base/factory.rb',
