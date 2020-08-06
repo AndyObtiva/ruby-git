@@ -1077,7 +1077,10 @@ module Git
     end
 
     def escape(s)
-      return "'#{s && s.to_s.gsub('\'','\'"\'"\'')}'" if RUBY_PLATFORM !~ /mingw|mswin/
+      # Check if on Windows via RUBY_PLATFORM (CRuby) and RUBY_DESCRIPTION (JRuby)
+      win_platform_regex = /mingw|mswin/
+      return "'#{s && s.to_s.gsub('\'','\'"\'"\'')}'" if RUBY_PLATFORM !~ win_platform_regex && RUBY_DESCRIPTION !~ win_platform_regex
+
 
       # Keeping the old escape format for windows users
       escaped = s.to_s.gsub('\'', '\'\\\'\'')
