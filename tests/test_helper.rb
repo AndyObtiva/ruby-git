@@ -8,7 +8,7 @@ require "git"
 class Test::Unit::TestCase
   
   def set_file_paths
-    cwd = `pwd`.chomp
+    cwd = FileUtils.pwd
     if File.directory?(File.join(cwd, 'files'))
       @test_dir = File.join(cwd, 'files')
     elsif File.directory?(File.join(cwd, '..', 'files'))
